@@ -1,6 +1,6 @@
 from os import remove
-from pprint import  pprint
-import  string
+from pprint import pprint
+import string
 class WordsFinder:
 
     all_words = {}
@@ -13,7 +13,7 @@ class WordsFinder:
 
     def get_all_words(self):
         for i in self.names:
-            with (open( i, encoding='utf-8') as file):
+            with (open(i, encoding='utf-8') as file):
                 words = file.read().lower()
                 for j in string.punctuation:
                     if j in words:
@@ -25,7 +25,7 @@ class WordsFinder:
 
         for name, i in self.all_words.items():
             if word in i:
-                self.find_word[name] = i.index(word)
+                self.find_word[name] = i.index(word)+1
         print(self.find_word)
 
     def count(self, word):
